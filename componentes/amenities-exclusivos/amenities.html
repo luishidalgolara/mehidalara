@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities Exclusivos | Mehida Lara Airbnb</title>
+    <link rel="stylesheet" href="amenities.css">
+</head>
+<body>
+    <!-- Header de la tienda -->
+    <header class="shop-header">
+        <div class="container">
+            <button class="btn-back" onclick="volverInicio()">
+                <span>←</span> Volver
+            </button>
+            <h1 class="shop-title">🍾 Amenities Exclusivos</h1>
+            <button class="btn-cart" onclick="toggleCart()">
+                🛒 Carrito (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- Categorías de filtro -->
+    <section class="categories">
+        <div class="container">
+            <div class="categories-wrapper">
+                <button class="category-btn active" data-category="todos" onclick="filtrarCategoria('todos')">
+                    ✨ Todos
+                </button>
+                <button class="category-btn" data-category="tragos" onclick="filtrarCategoria('tragos')">
+                    🍾 Tragos
+                </button>
+                <button class="category-btn" data-category="comidas" onclick="filtrarCategoria('comidas')">
+                    🍽️ Comidas
+                </button>
+                <button class="category-btn" data-category="dulces" onclick="filtrarCategoria('dulces')">
+                    🍰 Dulces
+                </button>
+                <button class="category-btn" data-category="frutas" onclick="filtrarCategoria('frutas')">
+                    🍓 Frutas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de productos -->
+    <section class="products-section">
+        <div class="container">
+            <div id="products-grid" class="products-grid">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel del carrito (lateral) -->
+    <aside class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>🛒 Tu Carrito</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <p class="cart-empty">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="total-amount">$0.00</span>
+            </div>
+            <button class="btn-checkout" onclick="procesarPedido()">Solicitar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Overlay del carrito -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>¡Pedido Recibido!</h2>
+            <p>Tu pedido ha sido enviado al concierge. Te contactaremos pronto para confirmar la entrega.</p>
+            <button class="btn-primary" onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="amenities.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "servicios": [
+    {
+      "id": "servicio-1",
+      "nombre": "Limpieza Diaria (Housekeeping)",
+      "descripcion": "Servicio completo de limpieza diaria con productos ecológicos premium",
+      "precio": 35000,
+      "duracion": "1-2 horas",
+      "icono": "🧹",
+      "destacado": true
+    },
+    {
+      "id": "servicio-2",
+      "nombre": "Paquete Limpieza Semanal",
+      "descripcion": "Servicio completo de limpieza semanal con productos ecológicos de lujo",
+      "precio": 80000,
+      "duracion": "Servicio semanal",
+      "icono": "⭐",
+      "destacado": true
+    },
+    {
+      "id": "servicio-3",
+      "nombre": "Cambio de Sábanas y Toallas",
+      "descripcion": "Cambio completo de ropa de cama y toallas de lujo",
+      "precio": 25000,
+      "duracion": "30 minutos",
+      "icono": "🛏️",
+      "destacado": false
+    }
+  ],
+  "notaImportante": "Todos nuestros servicios utilizan productos ecológicos certificados de lujo. Personal altamente capacitado y con verificación de antecedentes."
+}

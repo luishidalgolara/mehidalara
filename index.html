@@ -71,22 +71,22 @@
     <section class="premium-services">
         <div class="container">
             <div class="services-grid">
-                <div class="service-item fade-on-scroll">
-                    <div class="service-icon">🔑</div>
-                    <h3 class="service-title">Check-in Privado</h3>
-                    <p class="service-description">Proceso de llegada personalizado sin esperas ni complicaciones</p>
+                <div class="service-item fade-on-scroll" onclick="abrirItinerarios()" style="cursor: pointer; transition: transform 0.3s ease;">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Airbnb Itinerarios</h3>
+                    <p class="service-description">Guía completa de los mejores lugares para visitar en Concepción</p>
                 </div>
-                <div class="service-item fade-on-scroll">
+                <div class="service-item fade-on-scroll" onclick="abrirLimpieza()" style="cursor: pointer; transition: transform 0.3s ease;">
                     <div class="service-icon">🧹</div>
                     <h3 class="service-title">Limpieza Premium</h3>
                     <p class="service-description">Servicio diario de housekeeping con productos ecológicos de lujo</p>
                 </div>
                 <div class="service-item fade-on-scroll">
                     <div class="service-icon">🛎️</div>
-                    <h3 class="service-title">Concierge 24/7</h3>
+                    <h3 class="service-title">Conserjería 24/7</h3>
                     <p class="service-description">Asistencia personalizada disponible en todo momento</p>
                 </div>
-                <div class="service-item fade-on-scroll">
+                <div class="service-item fade-on-scroll" onclick="abrirAmenities()" style="cursor: pointer; transition: transform 0.3s ease;">
                     <div class="service-icon">🍾</div>
                     <h3 class="service-title">Amenities Exclusivos</h3>
                     <p class="service-description">Productos de baño premium y detalles de bienvenida</p>
@@ -337,7 +337,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-icon">📧</span>
-                        <span>reservas@mehidalara.com</span>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f38196809681859280b39e969b9a97929f928192dd909c9e">[email&#160;protected]</a></span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">📱</span>
@@ -407,9 +407,25 @@
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
         <button class="lightbox-prev" onclick="prevImage()">&#10094;</button>
         <button class="lightbox-next" onclick="nextImage()">&#10095;</button>
-        <div class="lightbox-content" id="lightboxContent"></div>
+        <img src="" alt="" id="lightboxImage">
     </div>
 
+    <!-- Script para navegación a Amenities -->
+    <script>
+        function abrirAmenities() {
+            window.location.href = 'componentes/amenities-exclusivos/amenities.html';
+        }
+        
+        function abrirLimpieza() {
+            window.location.href = 'componentes/limpieza-premium/limpieza.html';
+        }
+        
+        function abrirItinerarios() {
+            window.location.href = 'componentes/airbnb-itinerarios/itinerarios.html';
+        }
+    </script>
+
+    <!-- Script principal -->
     <script src="script.js"></script>
 </body>
 </html>

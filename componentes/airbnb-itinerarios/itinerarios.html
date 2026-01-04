@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Itinerarios | Mehida Lara Airbnb</title>
+    <link rel="stylesheet" href="itinerarios.css">
+</head>
+<body>
+    <!-- Header Hero -->
+    <header class="hero-header">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <button class="btn-back" onclick="volverInicio()">
+                <span>←</span> Volver
+            </button>
+            <h1 class="hero-title">✨ Airbnb Itinerarios</h1>
+            <p class="hero-subtitle">Descubre los mejores lugares de Concepción seleccionados para ti</p>
+        </div>
+    </header>
+
+    <!-- Filtros de Categorías -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="todos" onclick="filtrarCategoria('todos')">
+                    ✨ Todos
+                </button>
+                <button class="category-tab" data-category="spa" onclick="filtrarCategoria('spa')">
+                    💆‍♂️ Masajes y Spa
+                </button>
+                <button class="category-tab" data-category="restaurantes" onclick="filtrarCategoria('restaurantes')">
+                    🍽️ Restaurantes
+                </button>
+                <button class="category-tab" data-category="naturaleza" onclick="filtrarCategoria('naturaleza')">
+                    🌿 Naturaleza
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Lugares -->
+    <section class="places-section">
+        <div class="container">
+            <div id="places-container">
+                <!-- Los lugares se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalles -->
+    <div class="modal" id="details-modal">
+        <div class="modal-overlay" onclick="cerrarModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="cerrarModal()">✕</button>
+            <div id="modal-body">
+                <!-- Contenido del modal se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="itinerarios.js"></script>
+</body>
+</html>

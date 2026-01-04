@@ -1,0 +1,224 @@
+{
+  "categorias": [
+    {
+      "id": "tragos",
+      "nombre": "Tragos Premium",
+      "icono": "🍾",
+      "productos": [
+        {
+          "id": "trago-1",
+          "nombre": "Champagne Moët & Chandon",
+          "descripcion": "Champagne francés de lujo, 750ml",
+          "precio": 89.99,
+          "imagen": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "trago-2",
+          "nombre": "Whisky Johnnie Walker Blue",
+          "descripcion": "Whisky escocés premium, 750ml",
+          "precio": 179.99,
+          "imagen": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "trago-3",
+          "nombre": "Vino Tinto Reserva",
+          "descripcion": "Vino tinto chileno reserva especial, 750ml",
+          "precio": 45.99,
+          "imagen": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "trago-4",
+          "nombre": "Gin Hendrick's",
+          "descripcion": "Gin premium con pepino y rosa, 700ml",
+          "precio": 65.99,
+          "imagen": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "trago-5",
+          "nombre": "Ron Diplomático Reserva",
+          "descripcion": "Ron venezolano añejo, 750ml",
+          "precio": 55.99,
+          "imagen": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "trago-6",
+          "nombre": "Vodka Belvedere",
+          "descripcion": "Vodka polaco ultra premium, 700ml",
+          "precio": 59.99,
+          "imagen": "https://images.unsplash.com/photo-1560512823-829485b8bf24?w=400&q=80",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "comidas",
+      "nombre": "Comidas Gourmet",
+      "icono": "🍽️",
+      "productos": [
+        {
+          "id": "comida-1",
+          "nombre": "Tabla de Quesos Premium",
+          "descripcion": "Selección de 5 quesos artesanales con frutos secos",
+          "precio": 34.99,
+          "imagen": "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "comida-2",
+          "nombre": "Sushi Roll Premium",
+          "descripcion": "12 piezas de sushi premium con salmón y atún",
+          "precio": 42.99,
+          "imagen": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "comida-3",
+          "nombre": "Carpaccio de Res",
+          "descripcion": "Láminas finas de res con rúcula y parmesano",
+          "precio": 28.99,
+          "imagen": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "comida-4",
+          "nombre": "Langostinos al Ajillo",
+          "descripcion": "6 langostinos jumbo con mantequilla de ajo",
+          "precio": 38.99,
+          "imagen": "https://images.unsplash.com/photo-1633504581786-316c8002b1b9?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "comida-5",
+          "nombre": "Ensalada César Gourmet",
+          "descripcion": "Ensalada César con pollo grillé y crutones artesanales",
+          "precio": 24.99,
+          "imagen": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "comida-6",
+          "nombre": "Mini Burgers Wagyu",
+          "descripcion": "4 mini hamburguesas de carne wagyu con queso",
+          "precio": 45.99,
+          "imagen": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "dulces",
+      "nombre": "Dulces & Postres",
+      "icono": "🍰",
+      "productos": [
+        {
+          "id": "dulce-1",
+          "nombre": "Macarons Franceses",
+          "descripcion": "Caja de 12 macarons de sabores variados",
+          "precio": 22.99,
+          "imagen": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "dulce-2",
+          "nombre": "Chocolates Artesanales",
+          "descripcion": "Caja de 16 bombones gourmet premium",
+          "precio": 29.99,
+          "imagen": "https://images.unsplash.com/photo-1511381939415-e44015466834?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "dulce-3",
+          "nombre": "Cheesecake de Frutos Rojos",
+          "descripcion": "Porción individual de cheesecake premium",
+          "precio": 15.99,
+          "imagen": "https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "dulce-4",
+          "nombre": "Tiramisú Clásico",
+          "descripcion": "Tiramisú italiano tradicional individual",
+          "precio": 14.99,
+          "imagen": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "dulce-5",
+          "nombre": "Tarta de Limón",
+          "descripcion": "Tarta de limón con merengue italiano",
+          "precio": 13.99,
+          "imagen": "https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "dulce-6",
+          "nombre": "Brownie de Chocolate",
+          "descripcion": "Brownie artesanal con nueces y helado",
+          "precio": 12.99,
+          "imagen": "https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=400&q=80",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "frutas",
+      "nombre": "Frutas Frescas",
+      "icono": "🍓",
+      "productos": [
+        {
+          "id": "fruta-1",
+          "nombre": "Cesta de Frutas Premium",
+          "descripcion": "Selección de frutas de temporada premium",
+          "precio": 32.99,
+          "imagen": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "fruta-2",
+          "nombre": "Fresas con Chocolate",
+          "descripcion": "12 fresas cubiertas con chocolate belga",
+          "precio": 24.99,
+          "imagen": "https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "fruta-3",
+          "nombre": "Bowl de Frutas Tropicales",
+          "descripcion": "Mix de frutas exóticas: mango, piña, papaya",
+          "precio": 18.99,
+          "imagen": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "fruta-4",
+          "nombre": "Uvas Premium Sin Semilla",
+          "descripcion": "Racimo de uvas rojas importadas",
+          "precio": 16.99,
+          "imagen": "https://images.unsplash.com/photo-1596363505729-4190a9506133?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "fruta-5",
+          "nombre": "Sandía Cortada",
+          "descripcion": "Cubos de sandía fresca lista para servir",
+          "precio": 14.99,
+          "imagen": "https://images.unsplash.com/photo-1621583832862-2b7c3d8e4d47?w=400&q=80",
+          "disponible": true
+        },
+        {
+          "id": "fruta-6",
+          "nombre": "Arándanos Orgánicos",
+          "descripcion": "Caja de 250g de arándanos frescos",
+          "precio": 19.99,
+          "imagen": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&q=80",
+          "disponible": true
+        }
+      ]
+    }
+  ]
+}

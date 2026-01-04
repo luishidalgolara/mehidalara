@@ -1,0 +1,193 @@
+{
+  "categorias": [
+    {
+      "id": "spa",
+      "nombre": "Masajes y Spa",
+      "icono": "💆‍♂️",
+      "descripcion": "Relájate en los mejores spas y centros de masajes de Concepción",
+      "lugares": [
+        {
+          "id": "spa-1",
+          "nombre": "Camino del Agua Natural Spa",
+          "descripcion": "Spa natural con masajes, hidromasajes y relajación profunda en un ambiente único",
+          "ubicacion": "Concepción, Región del Biobío",
+          "tipo": "Spa Natural",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Camino+del+Agua+Natural+Spa+Concepcion"
+        },
+        {
+          "id": "spa-2",
+          "nombre": "Fénix Spa",
+          "descripcion": "Spa céntrico con excelentes valoraciones y variedad de tratamientos",
+          "ubicacion": "Centro de Concepción",
+          "tipo": "Spa Urbano",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Fenix+Spa+Concepcion"
+        },
+        {
+          "id": "spa-3",
+          "nombre": "Yasna Masoterapia y Cosmética Natural",
+          "descripcion": "Masajes y tratamientos naturales con buena reputación y atención personalizada",
+          "ubicacion": "Concepción",
+          "tipo": "Masoterapia",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Yasna+Masoterapia+Concepcion"
+        },
+        {
+          "id": "spa-4",
+          "nombre": "Serenaty Masoterapia Concepción",
+          "descripcion": "Masajes relajantes y terapéuticos con profesionales certificados",
+          "ubicacion": "Concepción",
+          "tipo": "Masoterapia",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Serenaty+Masoterapia+Concepcion"
+        },
+        {
+          "id": "spa-5",
+          "nombre": "Armonía Box Spa",
+          "descripcion": "Sesiones de masajes y bienestar en un espacio acogedor",
+          "ubicacion": "Concepción",
+          "tipo": "Spa & Wellness",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Armonia+Box+Spa+Concepcion"
+        }
+      ]
+    },
+    {
+      "id": "restaurantes",
+      "nombre": "Restaurantes Recomendados",
+      "icono": "🍽️",
+      "descripcion": "Descubre la mejor gastronomía local e internacional",
+      "lugares": [
+        {
+          "id": "rest-1",
+          "nombre": "Restaurante Quijote",
+          "descripcion": "Cocina local e internacional muy bien valorada con ambiente acogedor",
+          "ubicacion": "Concepción",
+          "tipo": "Internacional",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Restaurante+Quijote+Concepcion"
+        },
+        {
+          "id": "rest-2",
+          "nombre": "Faro Belén Restorán",
+          "descripcion": "Clásico restaurante con excelente reputación y platos tradicionales",
+          "ubicacion": "Concepción",
+          "tipo": "Cocina Chilena",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Faro+Belen+Restoran+Concepcion"
+        },
+        {
+          "id": "rest-3",
+          "nombre": "Alcatorce Restaurant",
+          "descripcion": "Buena opción para cenas completas con variedad de platos",
+          "ubicacion": "Concepción",
+          "tipo": "Restaurante",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Alcatorce+Restaurant+Concepcion"
+        },
+        {
+          "id": "rest-4",
+          "nombre": "Restaurante La Pasta de la Nonna",
+          "descripcion": "Cocina italiana popular en la ciudad con auténticos sabores",
+          "ubicacion": "Concepción",
+          "tipo": "Italiana",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=600&q=80",
+          "link": "https://www.google.com/maps/search/La+Pasta+de+la+Nonna+Concepcion"
+        },
+        {
+          "id": "rest-5",
+          "nombre": "Solocarnes Y Aquarium",
+          "descripcion": "Carnes y estilo chileno en ambiente familiar",
+          "ubicacion": "Concepción",
+          "tipo": "Parrilla",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Solocarnes+Y+Aquarium+Concepcion"
+        }
+      ]
+    },
+    {
+      "id": "naturaleza",
+      "nombre": "Naturaleza y Exterior",
+      "icono": "🌿",
+      "descripcion": "Explora la belleza natural de Concepción y sus alrededores",
+      "lugares": [
+        {
+          "id": "nat-1",
+          "nombre": "Parque Nacional Nonguén",
+          "descripcion": "Bosque nativo con senderos y naturaleza cerca de Concepción. Ideal para trekking y observación de flora y fauna",
+          "ubicacion": "Concepción, Región del Biobío",
+          "tipo": "Parque Nacional",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+          "link": "https://es.wikipedia.org/wiki/Parque_Nacional_Nongu%C3%A9n"
+        },
+        {
+          "id": "nat-2",
+          "nombre": "Península de Hualpén Nature Sanctuary",
+          "descripcion": "Área protegida con biodiversidad y vistas al océano, perfecta para caminatas",
+          "ubicacion": "Hualpén, Concepción",
+          "tipo": "Santuario Natural",
+          "destacado": true,
+          "imagen": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80",
+          "link": "https://es.wikipedia.org/wiki/Santuario_de_la_Naturaleza_Pen%C3%ADnsula_de_Hualp%C3%A9n"
+        },
+        {
+          "id": "nat-3",
+          "nombre": "Playa de Penco",
+          "descripcion": "Balneario con playa extensa ideal para caminatas y vistas al mar",
+          "ubicacion": "Penco, cerca de Concepción",
+          "tipo": "Playa",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+          "link": "https://es.wikipedia.org/wiki/Penco"
+        },
+        {
+          "id": "nat-4",
+          "nombre": "Punta de Parra (Tomé)",
+          "descripcion": "Balneario costero con arena y aguas tranquilas cerca de la ciudad",
+          "ubicacion": "Tomé, Concepción",
+          "tipo": "Balneario",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80",
+          "link": "https://es.wikipedia.org/wiki/Tom%C3%A9"
+        },
+        {
+          "id": "nat-5",
+          "nombre": "Laguna Redonda",
+          "descripcion": "Laguna urbana atractiva para paseos y fotos en plena ciudad",
+          "ubicacion": "Concepción",
+          "tipo": "Laguna Urbana",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Laguna+Redonda+Concepcion"
+        },
+        {
+          "id": "nat-6",
+          "nombre": "Laguna Grande / Laguna Chica",
+          "descripcion": "Hermosas lagunas naturales en San Pedro de la Paz, ideales para caminatas, observación de aves y actividades al aire libre",
+          "ubicacion": "San Pedro de la Paz, Concepción",
+          "tipo": "Lagunas Naturales",
+          "destacado": false,
+          "imagen": "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&q=80",
+          "link": "https://www.google.com/maps/search/Laguna+Grande+Laguna+Chica+San+Pedro+de+la+Paz"
+        }
+      ]
+    }
+  ],
+  "informacionGeneral": {
+    "titulo": "Guía de Itinerarios Concepción",
+    "descripcion": "Descubre los mejores lugares de Concepción seleccionados especialmente para nuestros huéspedes",
+    "nota": "Todos los lugares han sido verificados y recomendados por nuestro equipo de concierge"
+  }
+}

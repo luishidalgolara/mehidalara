@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Mehida Lara Airbnb</title>    
+    <link rel="stylesheet" href="admin-css/admin-base.css">
+    <link rel="stylesheet" href="admin-css/admin-login.css">
+    <link rel="stylesheet" href="admin-css/admin-responsive.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="admin-logo">
+                    <h1>Mehida Lara</h1>
+                    <span class="admin-badge">Admin Panel</span>
+                </div>
+                <p class="login-subtitle">Panel de Administración</p>
+            </div>
+            
+            <form id="loginForm" class="login-form" onsubmit="handleLogin(event)">
+                <div class="alert alert-info">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <strong>Credenciales de prueba:</strong><br>
+                        Usuario: <code>admin</code><br>
+                        Contraseña: <code>mehida2025</code>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                        Usuario
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Ingrese su usuario"
+                        autocomplete="username"
+                        style="pointer-events: auto !important; user-select: auto !important;"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Contraseña
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Ingrese su contraseña"
+                        autocomplete="current-password"
+                        style="pointer-events: auto !important; user-select: auto !important;"
+                    >
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Recordar sesión</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-login">
+                    <span>Iniciar Sesión</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+
+                <div id="loginError" class="alert alert-error" style="display: none; margin-top: 1rem;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    </svg>
+                    <span id="errorMessage">Usuario o contraseña incorrectos</span>
+                </div>
+            </form>
+
+            <div class="login-footer">
+                <p>© 2025 Mehida Lara Airbnb - Panel Administrativo</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login functionality
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            const errorDiv = document.getElementById('loginError');
+            
+            // Credenciales
+            const validUsername = 'admin';
+            const validPassword = 'mehida2025';
+            
+            if (username === validUsername && password === validPassword) {
+                // Login exitoso
+                const sessionData = {
+                    username: username,
+                    loginTime: new Date().toISOString(),
+                    remember: rememberMe
+                };
+                
+                if (rememberMe) {
+                    localStorage.setItem('adminSession', JSON.stringify(sessionData));
+                } else {
+                    sessionStorage.setItem('adminSession', JSON.stringify(sessionData));
+                }
+                
+                // Animación de éxito
+                const button = document.querySelector('.btn-login');
+                button.innerHTML = '<span>✓ Acceso Concedido</span>';
+                button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                
+                setTimeout(() => {
+                    window.location.href = 'admin-panel.html';
+                }, 800);
+                
+            } else {
+                // Login fallido
+                errorDiv.style.display = 'flex';
+                
+                // Shake animation
+                const card = document.querySelector('.login-card');
+                card.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    card.style.animation = '';
+                }, 500);
+                
+                // Limpiar contraseña
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        }
+
+        // Verificar si ya hay sesión activa
+        window.addEventListener('load', function() {
+            const session = localStorage.getItem('adminSession') || sessionStorage.getItem('adminSession');
+            if (session) {
+                const sessionData = JSON.parse(session);
+                const loginTime = new Date(sessionData.loginTime);
+                const now = new Date();
+                const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
+                
+                // Si la sesión tiene menos de 24 horas, redirigir al panel
+                if (hoursDiff < 24) {
+                    window.location.href = 'admin-panel.html';
+                }
+            }
+            
+            // Focus en el primer campo
+            document.getElementById('username').focus();
+        });
+
+        // Animación de shake para error
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

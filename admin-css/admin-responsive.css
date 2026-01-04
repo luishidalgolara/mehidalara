@@ -1,0 +1,65 @@
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+    .admin-main {
+        padding: 1rem;
+    }
+    
+    .header-content {
+        padding: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .apartments-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        max-width: 100%;
+    }
+    
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-question {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        border-radius: var(--radius-md);
+    }
+    
+    .header-left h1 {
+        font-size: 1.25rem;
+    }
+    
+    .user-info {
+        display: none;
+    }
+}

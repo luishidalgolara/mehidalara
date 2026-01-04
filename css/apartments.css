@@ -1,0 +1,184 @@
+/* ===================================
+   SECCIÓN DEPARTAMENTOS
+   =================================== */
+
+.apartments {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background);
+}
+
+.apartments .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.apartments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+/* ===================================
+   CARDS DE DEPARTAMENTOS
+   =================================== */
+
+.apartment-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+    border: 1px solid var(--color-border);
+}
+
+.apartment-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+}
+
+.card-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition-slow);
+}
+
+.apartment-card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: var(--transition-slow);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    transition: var(--transition-base);
+}
+
+.image-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.apartment-card:hover .image-placeholder {
+    transform: scale(1.08);
+}
+
+.apartment-card:hover .image-overlay {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.apartment-card:hover .image-pattern {
+    opacity: 1;
+}
+
+.card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+    z-index: 10;
+}
+
+.card-content {
+    padding: var(--spacing-md);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-elegant);
+    letter-spacing: 1px;
+}
+
+.card-location {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    font-weight: 300;
+}
+
+.card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+}
+
+.card-features li {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    padding: 0.4rem 0.8rem;
+    background-color: var(--color-background);
+    border-radius: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.price-amount {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.price-period {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}

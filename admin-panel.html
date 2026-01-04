@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Mehida Lara Airbnb</title>    
+    <link rel="stylesheet" href="admin-css/admin-base.css">
+    <link rel="stylesheet" href="admin-css/admin-header.css">
+    <link rel="stylesheet" href="admin-css/admin-stats.css">
+    <link rel="stylesheet" href="admin-css/admin-apartments.css">
+    <link rel="stylesheet" href="admin-css/admin-modal.css">
+    <link rel="stylesheet" href="admin-css/admin-forms.css">
+    <link rel="stylesheet" href="admin-css/admin-responsive.css">
+</head>
+<body class="admin-page">
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1>Mehida Lara <span>Admin</span></h1>
+            </div>
+            <div class="header-right">
+                <span class="user-info">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                    </svg>
+                    <span id="adminUsername">Admin</span>
+                </span>
+                <button class="btn-logout" onclick="logout()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"/>
+                    </svg>
+                    Salir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-container">
+            
+            <!-- Dashboard Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Departamentos</p>
+                        <h3 class="stat-value" id="totalApartments">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Imágenes</p>
+                        <h3 class="stat-value" id="totalImages">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Última Actualización</p>
+                        <h3 class="stat-value" id="lastUpdate">Nunca</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="showAddForm()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                    Agregar Nuevo Departamento
+                </button>
+                <button class="btn-secondary" onclick="viewWebsite()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                    </svg>
+                    Ver Sitio Web
+                </button>
+            </div>
+
+            <!-- Apartments List -->
+            <div class="apartments-section">
+                <h2 class="section-title">Tus Departamentos</h2>
+                <div id="apartmentsList" class="apartments-list">
+                    <!-- Los departamentos se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal para agregar/editar departamento -->
+    <div id="apartmentModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Nuevo Departamento</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text">Paso <span id="currentStep">1</span> de <span id="totalSteps">8</span></p>
+            </div>
+
+            <form id="apartmentForm" class="wizard-form">
+                <!-- Step 1: Nombre -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-content">
+                        <div class="step-icon">🏠</div>
+                        <h3 class="step-question">¿Cómo se llama tu departamento?</h3>
+                        <p class="step-hint">Dale un nombre atractivo y descriptivo</p>
+                        <input type="text" id="apartmentName" class="input-large" placeholder="Ej: Penthouse Panorámico" required>
+                    </div>
+                </div>
+
+                <!-- Step 2: Ubicación -->
+                <div class="form-step" data-step="2">
+                    <div class="step-content">
+                        <div class="step-icon">📍</div>
+                        <h3 class="step-question">¿Dónde está ubicado?</h3>
+                        <p class="step-hint">Indica el barrio o zona</p>
+                        <input type="text" id="apartmentLocation" class="input-large" placeholder="Ej: Centro Histórico" required>
+                    </div>
+                </div>
+
+                <!-- Step 3: Precio -->
+                <div class="form-step" data-step="3">
+                    <div class="step-content">
+                        <div class="step-icon">💰</div>
+                        <h3 class="step-question">¿Cuál es el precio por noche?</h3>
+                        <p class="step-hint">En dólares USD</p>
+                        <input type="number" id="apartmentPrice" class="input-large" placeholder="150" min="1" required>
+                    </div>
+                </div>
+
+                <!-- Step 4: Capacidad -->
+                <div class="form-step" data-step="4">
+                    <div class="step-content">
+                        <div class="step-icon">👥</div>
+                        <h3 class="step-question">¿Cuántos huéspedes acepta?</h3>
+                        <p class="step-hint">Número máximo de personas</p>
+                        <input type="number" id="apartmentGuests" class="input-large" placeholder="4" min="1" max="20" required>
+                    </div>
+                </div>
+
+                <!-- Step 5: Habitaciones y Baños -->
+                <div class="form-step" data-step="5">
+                    <div class="step-content">
+                        <div class="step-icon">🛏️</div>
+                        <h3 class="step-question">¿Cuántas habitaciones y baños tiene?</h3>
+                        <p class="step-hint">Especifica la cantidad de cada uno</p>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Habitaciones</label>
+                                <input type="number" id="apartmentBedrooms" class="input-large" placeholder="2" min="0" max="10" required>
+                            </div>
+                            <div class="input-col">
+                                <label>Baños</label>
+                                <input type="number" id="apartmentBathrooms" class="input-large" placeholder="2" min="1" max="10" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Descripción -->
+                <div class="form-step" data-step="6">
+                    <div class="step-content">
+                        <div class="step-icon">📝</div>
+                        <h3 class="step-question">Describe tu departamento</h3>
+                        <p class="step-hint">Cuéntales a tus huéspedes lo especial de tu espacio</p>
+                        <textarea id="apartmentDescription" class="textarea-large" rows="5" placeholder="Ej: Hermoso departamento con vista al mar, completamente amoblado y decorado con estilo moderno..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 7: Amenidades -->
+                <div class="form-step" data-step="7">
+                    <div class="step-content">
+                        <div class="step-icon">✨</div>
+                        <h3 class="step-question">¿Qué comodidades ofreces?</h3>
+                        <p class="step-hint">Selecciona todas las que apliquen</p>
+                        <div class="amenities-grid">
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="WiFi de alta velocidad">
+                                <span>📶 WiFi de alta velocidad</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Aire acondicionado">
+                                <span>❄️ Aire acondicionado</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Cocina equipada">
+                                <span>🍳 Cocina equipada</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Smart TV">
+                                <span>📺 Smart TV</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Lavadora">
+                                <span>🧺 Lavadora</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Estacionamiento">
+                                <span>🚗 Estacionamiento</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Terraza/Balcón">
+                                <span>🌿 Terraza/Balcón</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Vista panorámica">
+                                <span>🌆 Vista panorámica</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Gimnasio">
+                                <span>💪 Gimnasio</span>
+                            </label>
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" value="Piscina">
+                                <span>🏊 Piscina</span>
+                            </label>
+                        </div>
+                        <div class="custom-amenity">
+                            <input type="text" id="customAmenity" class="input-large" placeholder="Agregar otra comodidad...">
+                            <button type="button" class="btn-add-amenity" onclick="addCustomAmenity()">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8: Imágenes -->
+                <div class="form-step" data-step="8">
+                    <div class="step-content">
+                        <div class="step-icon">📸</div>
+                        <h3 class="step-question">Sube las imágenes de tu departamento</h3>
+                        <p class="step-hint">Máximo 10 imágenes en formato JPG o PNG de alta calidad</p>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="imageInput" accept="image/jpeg,image/jpg,image/png" multiple style="display: none;">
+                            <div class="upload-prompt">
+                                <svg width="64" height="64" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                                </svg>
+                                <p>Arrastra las imágenes aquí o haz clic para seleccionar</p>
+                                <span>JPG, PNG - Máximo 10 imágenes</span>
+                            </div>
+                        </div>
+
+                        <div id="imagePreview" class="image-preview-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" class="btn-nav btn-prev" onclick="previousStep()" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Anterior
+                    </button>
+                    <button type="button" class="btn-nav btn-next" onclick="nextStep()">
+                        Siguiente
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <button type="submit" class="btn-nav btn-submit" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Guardar Departamento
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

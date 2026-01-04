@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mehida Lara Airbnb - Departamentos de lujo en arriendo. Descubre espacios únicos con estilo boutique.">
+    <title>Mehida Lara Airbnb | Departamentos de Lujo</title>    
+    <!-- Estilos CSS Modulares -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/apartments.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Mehida Lara</h1>
+                    <span class="logo-subtitle">Airbnb</span>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="#departamentos" class="nav-link">Departamentos</a></li>
+                        <li><a href="#galeria" class="nav-link">Galería</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title fade-in">Experimenta el Lujo en Cada Detalle</h2>
+            <p class="hero-subtitle fade-in">Departamentos exclusivos diseñados para tu confort absoluto</p>
+            <a href="#departamentos" class="btn-primary fade-in">Explorar Departamentos</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Sección de Introducción -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-content fade-on-scroll">
+                <div class="intro-badge">Hospitalidad de Lujo</div>
+                <h2 class="section-title">Bienvenido a la Excelencia</h2>
+                <div class="title-divider"></div>
+                <p class="intro-text">Cada uno de nuestros departamentos ha sido cuidadosamente seleccionado y diseñado para ofrecerte una experiencia única. Espacios luminosos, acabados premium y ubicaciones privilegiadas definen nuestra colección exclusiva.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Premium -->
+    <section class="premium-services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-item fade-on-scroll">
+                    <div class="service-icon">🔑</div>
+                    <h3 class="service-title">Check-in Privado</h3>
+                    <p class="service-description">Proceso de llegada personalizado sin esperas ni complicaciones</p>
+                </div>
+                <div class="service-item fade-on-scroll">
+                    <div class="service-icon">🧹</div>
+                    <h3 class="service-title">Limpieza Premium</h3>
+                    <p class="service-description">Servicio diario de housekeeping con productos ecológicos de lujo</p>
+                </div>
+                <div class="service-item fade-on-scroll">
+                    <div class="service-icon">🛎️</div>
+                    <h3 class="service-title">Concierge 24/7</h3>
+                    <p class="service-description">Asistencia personalizada disponible en todo momento</p>
+                </div>
+                <div class="service-item fade-on-scroll">
+                    <div class="service-icon">🍾</div>
+                    <h3 class="service-title">Amenities Exclusivos</h3>
+                    <p class="service-description">Productos de baño premium y detalles de bienvenida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Departamentos -->
+    <section class="apartments" id="departamentos">
+        <div class="container">
+            <h2 class="section-title fade-on-scroll">Nuestros Departamentos</h2>
+            <div class="apartments-grid">
+                <!-- Departamento 1 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Penthouse Panorámico" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-badge">Destacado</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Penthouse Panorámico</h3>
+                        <p class="card-location">📍 Centro Histórico</p>
+                        <p class="card-description">Espectacular penthouse con vistas de 360° a la ciudad. Terraza privada, 3 habitaciones suite y acabados de primera clase.</p>
+                        <ul class="card-features">
+                            <li>👥 6 huéspedes</li>
+                            <li>🛏️ 3 habitaciones</li>
+                            <li>🛁 2 baños</li>
+                            <li>📶 WiFi Premium</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$180</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(0)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Departamento 2 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Suite Costera" class="card-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Suite Costera</h3>
+                        <p class="card-location">📍 Frente al Mar</p>
+                        <p class="card-description">Despierta con el sonido de las olas. Amplio balcón con vista directa al océano, decoración contemporánea y cocina gourmet.</p>
+                        <ul class="card-features">
+                            <li>👥 4 huéspedes</li>
+                            <li>🛏️ 2 habitaciones</li>
+                            <li>🛁 2 baños</li>
+                            <li>🏖️ Vista al mar</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$150</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(1)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Departamento 3 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Loft Moderno" class="card-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Loft Moderno</h3>
+                        <p class="card-location">📍 Distrito Artístico</p>
+                        <p class="card-description">Concepto abierto con techos altos, iluminación diseñada y arte contemporáneo. Perfecto para estancias creativas y profesionales.</p>
+                        <ul class="card-features">
+                            <li>👥 2 huéspedes</li>
+                            <li>🛏️ 1 habitación</li>
+                            <li>🛁 1 baño</li>
+                            <li>🎨 Espacio de trabajo</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$95</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(2)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Departamento 4 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Jardín Urbano" class="card-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Jardín Urbano</h3>
+                        <p class="card-location">📍 Zona Residencial</p>
+                        <p class="card-description">Oasis de tranquilidad con jardín privado. Ideal para familias que buscan espacio, naturaleza y privacidad en plena ciudad.</p>
+                        <ul class="card-features">
+                            <li>👥 8 huéspedes</li>
+                            <li>🛏️ 4 habitaciones</li>
+                            <li>🛁 3 baños</li>
+                            <li>🌳 Jardín privado</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$220</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(3)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Departamento 5 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Estudio Boutique" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-badge">Nuevo</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Estudio Boutique</h3>
+                        <p class="card-location">📍 Plaza Principal</p>
+                        <p class="card-description">Compacto pero sofisticado. Diseño inteligente que maximiza cada metro cuadrado con estilo y funcionalidad excepcional.</p>
+                        <ul class="card-features">
+                            <li>👥 2 huéspedes</li>
+                            <li>🛏️ Estudio</li>
+                            <li>🛁 1 baño</li>
+                            <li>☕ Cocina equipada</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$85</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(4)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Departamento 6 -->
+                <article class="apartment-card fade-on-scroll">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Classic Elegance" class="card-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Classic Elegance</h3>
+                        <p class="card-location">📍 Barrio Histórico</p>
+                        <p class="card-description">Elegancia atemporal en edificio patrimonial restaurado. Molduras originales, pisos de madera noble y confort moderno.</p>
+                        <ul class="card-features">
+                            <li>👥 5 huéspedes</li>
+                            <li>🛏️ 3 habitaciones</li>
+                            <li>🛁 2 baños</li>
+                            <li>📚 Biblioteca</li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-amount">$165</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                            <button class="btn-secondary" onclick="openDetails(5)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Visual -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="fade-on-scroll">
+                <div class="intro-badge">Nuestros Espacios</div>
+                <h2 class="section-title">Galería de Espacios</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Sala de Estar" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🛋️</span>
+                            <span class="gallery-text">Sala de Estar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=800&q=80" alt="Cocina Gourmet" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🍳</span>
+                            <span class="gallery-text">Cocina Gourmet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80" alt="Habitación Principal" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🛏️</span>
+                            <span class="gallery-text">Habitación Principal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Baño de Lujo" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🛁</span>
+                            <span class="gallery-text">Baño de Lujo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide fade-on-scroll" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80" alt="Vistas Panorámicas" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🌆</span>
+                            <span class="gallery-text">Vistas Panorámicas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Terraza Privada" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <span class="gallery-icon">🪴</span>
+                            <span class="gallery-text">Terraza Privada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto/Reserva -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content fade-on-scroll">
+                <h2 class="section-title">Reserva tu Estadía</h2>
+                <p class="contact-subtitle">Estamos aquí para hacer de tu experiencia algo inolvidable</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>reservas@mehidalara.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+56 9 1234 5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⏰</span>
+                        <span>Check-in: 15:00 | Check-out: 11:00</span>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="handleReservation()">Iniciar Reserva</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Mehida Lara Airbnb</h3>
+                    <p class="footer-text">Experiencias de hospedaje excepcionales en las mejores ubicaciones.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#departamentos">Departamentos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cancelación</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mehida Lara Airbnb. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalles -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDetails()">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox para Galería -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="prevImage()">&#10094;</button>
+        <button class="lightbox-next" onclick="nextImage()">&#10095;</button>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

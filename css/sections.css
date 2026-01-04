@@ -1,0 +1,138 @@
+/* ===================================
+   SECCIÓN INTRODUCCIÓN
+   =================================== */
+
+.intro {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+}
+
+.intro-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(184, 149, 106, 0.1);
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 50px;
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(184, 149, 106, 0.2);
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--color-text-light);
+    font-weight: 300;
+}
+
+/* ===================================
+   SECCIÓN SERVICIOS PREMIUM
+   =================================== */
+
+.premium-services {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(180deg, var(--color-white) 0%, var(--color-background) 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.service-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: 8px;
+    transition: var(--transition-base);
+    border: 1px solid var(--color-border);
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-secondary);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    filter: grayscale(0.3);
+}
+
+.service-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    font-weight: 300;
+}
+
+/* ===================================
+   SECCIÓN CONTACTO
+   =================================== */
+
+.contact {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #3d3d3d 100%);
+    color: var(--color-white);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact .section-title {
+    color: var(--color-white);
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact .btn-primary {
+    margin-top: var(--spacing-md);
+}

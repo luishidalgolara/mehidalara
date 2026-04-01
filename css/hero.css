@@ -77,6 +77,80 @@
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botón Airbnb — sólido dorado */
+.btn-airbnb {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border: 2px solid var(--color-accent);
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.btn-airbnb:hover {
+    background: transparent;
+    color: var(--color-accent);
+}
+
+/* Botón Arriendo — contorno blanco */
+.btn-arriendo {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.btn-arriendo:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* Botón Venta — semitransparente cobre */
+.btn-venta {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgba(184, 149, 106, 0.25);
+    color: var(--color-white);
+    border: 2px solid var(--color-secondary);
+    backdrop-filter: blur(4px);
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.btn-venta:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;

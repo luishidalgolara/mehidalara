@@ -530,7 +530,7 @@ document.addEventListener('click', function(e) {
 
 function handleReservation() {
     // Simular proceso de reserva
-    alert('¡Gracias por tu interés! En una aplicación real, esto te llevaría al proceso de reserva.\n\nPara continuar, por favor contáctanos:\n📧 reservas@mehidalara.com\n📱 +56 9 1234 5678');
+    alert('¡Gracias por tu interés! En una aplicación real, esto te llevaría al proceso de reserva.\n\nPara continuar, por favor contáctanos:\n📧 reservas@larem.com\n📱 +56 9 1234 5678');
     
     // Cerrar modal si está abierto
     closeDetails();
@@ -578,5 +578,5 @@ window.addEventListener('load', function() {
 // CONSOLE LOG PERSONALIZADO
 // ===================================
 
-console.log('%c Mehida Lara Airbnb ', 'background: #b8956a; color: white; font-size: 20px; padding: 10px;');
+console.log('%c Larem ', 'background: #b8956a; color: white; font-size: 20px; padding: 10px;');
 console.log('%c Sitio web con panel de administración integrado ', 'background: #1a1a1a; color: white; font-size: 12px; padding: 5px;');

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Larem Arriendo - Departamentos en arriendo mensual en Concepción.">
+    <title>Larem | Arriendo</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="arriendo.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="back-arrow" aria-label="Volver al inicio">
+                    <span class="back-arrow-line"></span>
+                    <span class="back-arrow-text">Volver</span>
+                </a>
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <h1>Larem</h1>
+                        <span class="logo-subtitle">Arriendo</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#propiedades" class="nav-link">Propiedades</a></li>
+                        <li><a href="#galeria" class="nav-link">Galería</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                        <li><a href="../airbnb/index.html" class="nav-link">Airbnb</a></li>
+                        <li><a href="../venta/index.html" class="nav-link">Venta</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content fade-in">
+            <div class="page-badge">Arriendo</div>
+            <h2 class="page-hero-title">Tu Hogar, Tu Espacio</h2>
+            <p class="page-hero-subtitle">Departamentos en arriendo mensual con todas las comodidades</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-bar">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="1hab">1 Habitación</button>
+                <button class="filter-btn" data-filter="2hab">2 Habitaciones</button>
+                <button class="filter-btn" data-filter="3hab">3+ Habitaciones</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propiedades -->
+    <section class="propiedades" id="propiedades">
+        <div class="container">
+            <div class="fade-on-scroll section-header">
+                <div class="intro-badge">Disponibles Ahora</div>
+                <h2 class="section-title">Propiedades en Arriendo</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="propiedades-grid">
+
+                <article class="prop-card fade-on-scroll" data-category="1hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Estudio Moderno" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag">Disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Estudio Moderno</h3>
+                                <p class="card-location">📍 Centro, Concepción</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$380.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ Estudio</span>
+                            <span class="spec">🛁 1 Baño</span>
+                            <span class="spec">📐 35 m²</span>
+                            <span class="spec">🏢 Piso 5</span>
+                        </div>
+                        <p class="card-description">Estudio totalmente amoblado con cocina integrada, excelente iluminación natural y acceso a áreas comunes con gimnasio.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Amoblado</span>
+                                <span class="extra-tag">Gastos comunes incluidos</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(0)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="prop-card fade-on-scroll" data-category="2hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Departamento 2D2B" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag">Disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Departamento 2D2B</h3>
+                                <p class="card-location">📍 Barrio Universitario</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$550.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ 2 Hab.</span>
+                            <span class="spec">🛁 2 Baños</span>
+                            <span class="spec">📐 65 m²</span>
+                            <span class="spec">🚗 Estac.</span>
+                        </div>
+                        <p class="card-description">Amplio departamento en edificio moderno con seguridad 24/7. Ideal para parejas o profesionales. Balcón con vista a la ciudad.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Sin amoblar</span>
+                                <span class="extra-tag">Bodega</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(1)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="prop-card fade-on-scroll" data-category="3hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Casa 3D en Barrio Residencial" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag card-tag-pronto">Pronto disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Casa 3D Jardín</h3>
+                                <p class="card-location">📍 Sector Collao</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$850.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ 3 Hab.</span>
+                            <span class="spec">🛁 2 Baños</span>
+                            <span class="spec">📐 110 m²</span>
+                            <span class="spec">🌳 Jardín</span>
+                        </div>
+                        <p class="card-description">Casa con jardín privado en sector tranquilo. Amplio living-comedor, cocina equipada y 2 estacionamientos techados.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Mascotas OK</span>
+                                <span class="extra-tag">2 Estacionamientos</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(2)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="prop-card fade-on-scroll" data-category="2hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Depto Vista al Río" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag">Disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Depto Vista al Río</h3>
+                                <p class="card-location">📍 Ribera Norte</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$620.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ 2 Hab.</span>
+                            <span class="spec">🛁 1 Baño</span>
+                            <span class="spec">📐 70 m²</span>
+                            <span class="spec">🌊 Vista río</span>
+                        </div>
+                        <p class="card-description">Departamento con espectacular vista al río Biobío. Piso 8, amplia terraza, terminaciones de primera y edificio con piscina.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Semi amoblado</span>
+                                <span class="extra-tag">Piscina</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(3)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="prop-card fade-on-scroll" data-category="1hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Loft 1 Dormitorio" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag">Disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Loft 1 Dormitorio</h3>
+                                <p class="card-location">📍 Pedro de Valdivia</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$450.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ 1 Hab.</span>
+                            <span class="spec">🛁 1 Baño</span>
+                            <span class="spec">📐 48 m²</span>
+                            <span class="spec">🏢 Piso 3</span>
+                        </div>
+                        <p class="card-description">Loft de diseño con concepto abierto, techos altos y ventanales grandes. Perfecto para profesionales modernos.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Amoblado</span>
+                                <span class="extra-tag">WiFi incluido</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(4)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="prop-card fade-on-scroll" data-category="3hab">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Penthouse 3D Terraza" class="card-img">
+                        <div class="image-overlay"></div>
+                        <span class="card-tag">Disponible</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-top">
+                            <div>
+                                <h3 class="card-title">Penthouse 3D Terraza</h3>
+                                <p class="card-location">📍 Punta de Parra</p>
+                            </div>
+                            <div class="card-price-box">
+                                <span class="price-amount">$1.100.000</span>
+                                <span class="price-period">/mes</span>
+                            </div>
+                        </div>
+                        <div class="card-specs">
+                            <span class="spec">🛏️ 3 Hab.</span>
+                            <span class="spec">🛁 3 Baños</span>
+                            <span class="spec">📐 150 m²</span>
+                            <span class="spec">🌆 Terraza</span>
+                        </div>
+                        <p class="card-description">Exclusivo penthouse con terraza de 40m². Vistas panorámicas, cocina gourmet, living doble y suite principal con vestidor.</p>
+                        <div class="card-footer">
+                            <div class="card-extras">
+                                <span class="extra-tag">Sin amoblar</span>
+                                <span class="extra-tag">2 Estacionamientos</span>
+                            </div>
+                            <button class="btn-card" onclick="openDetails(5)">Ver Detalles</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="fade-on-scroll section-header">
+                <div class="intro-badge">Nuestras Propiedades</div>
+                <h2 class="section-title">Galería</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Sala de Estar" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Living Comedor</span></div></div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=800&q=80" alt="Cocina" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Cocina</span></div></div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80" alt="Dormitorio" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Dormitorio</span></div></div>
+                </div>
+                <div class="gallery-item gallery-item-wide fade-on-scroll" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80" alt="Vista" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Vistas</span></div></div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Baño" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Baño</span></div></div>
+                </div>
+                <div class="gallery-item fade-on-scroll" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Terraza" class="gallery-img">
+                    <div class="gallery-overlay"><div class="gallery-content"><span class="gallery-text">Terraza</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content fade-on-scroll">
+                <h2 class="section-title">¿Te interesa alguna propiedad?</h2>
+                <p class="contact-subtitle">Contáctanos y te asesoramos sin compromiso</p>
+                <div class="contact-info">
+                    <div class="contact-item"><span class="contact-icon">📧</span><span>Reserva@larem.cl</span></div>
+                    <div class="contact-item"><span class="contact-icon">📱</span><span>+56 9 930 955 22</span></div>
+                    <div class="contact-item"><span class="contact-icon">🕐</span><span>Lunes a Viernes 9:00 - 18:00</span></div>
+                </div>
+                <button class="btn-primary" onclick="handleContact()">Consultar Disponibilidad</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Larem</h3>
+                    <span class="footer-logo-sub">Arriendos</span>
+                    <p class="footer-text">Tu hogar ideal en Concepción.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="../airbnb/index.html">Airbnb</a></li>
+                        <li><a href="index.html">Arriendo</a></li>
+                        <li><a href="../venta/index.html">Venta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Larem. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/56993095522" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <span class="whatsapp-label">Escríbenos</span>
+        <span class="whatsapp-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </span>
+    </a>
+
+    <!-- Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDetails()">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="prevImage()">&#10094;</button>
+        <button class="lightbox-next" onclick="nextImage()">&#10095;</button>
+        <img src="" alt="" id="lightboxImage">
+    </div>
+
+    <script src="arriendo.js"></script>
+</body>
+</html>

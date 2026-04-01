@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Admin - Larem</title>    
+    <title>Panel Admin - Larem</title>
     <link rel="stylesheet" href="admin-css/admin-base.css">
     <link rel="stylesheet" href="admin-css/admin-header.css">
     <link rel="stylesheet" href="admin-css/admin-stats.css">
@@ -11,8 +11,95 @@
     <link rel="stylesheet" href="admin-css/admin-modal.css">
     <link rel="stylesheet" href="admin-css/admin-forms.css">
     <link rel="stylesheet" href="admin-css/admin-responsive.css">
+    <style>
+        /* ── Tabs ── */
+        .section-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e8e6e3;
+        }
+        .tab-btn {
+            padding: 0.9rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            cursor: pointer;
+            color: #6b6b6b;
+            transition: all 0.25s ease;
+        }
+        .tab-btn:hover { color: #1a1a1a; }
+        .tab-btn.active-tab { color: #1a1a1a; border-bottom-color: #d4af37; }
+        .tab-btn.tab-airbnb.active-tab { border-bottom-color: #d4af37; color: #b8860b; }
+        .tab-btn.tab-arriendo.active-tab { border-bottom-color: #6b8f71; color: #6b8f71; }
+        .tab-btn.tab-venta.active-tab { border-bottom-color: #2c3e6b; color: #2c3e6b; }
+
+        /* ── Secciones ── */
+        .tab-section { display: none; }
+        .tab-section.active { display: block; }
+
+        /* ── Add button por sección ── */
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .section-header-row h2 { margin: 0; font-size: 1.4rem; }
+
+        /* ── Badges de sección ── */
+        .item-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.4rem;
+        }
+        .badge-airbnb { background: #fff8e1; color: #b8860b; }
+        .badge-arriendo { background: #e8f5e9; color: #6b8f71; }
+        .badge-venta { background: #e8eaf6; color: #2c3e6b; }
+        .item-specs {
+            font-size: 0.78rem;
+            color: #6b6b6b;
+            margin: 0.3rem 0 0.8rem;
+        }
+        .apartment-price span {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        /* ── Stats mini ── */
+        .mini-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .mini-stat {
+            background: #fff;
+            border: 1px solid #e8e6e3;
+            border-radius: 8px;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.8rem;
+            color: #6b6b6b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .mini-stat strong { font-size: 1.4rem; color: #1a1a1a; }
+    </style>
 </head>
 <body class="admin-page">
+
     <!-- Header -->
     <header class="admin-header">
         <div class="header-content">
@@ -36,266 +123,491 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main -->
     <main class="admin-main">
         <div class="admin-container">
-            
-            <!-- Dashboard Stats -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Total Departamentos</p>
-                        <h3 class="stat-value" id="totalApartments">0</h3>
-                    </div>
-                </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Total Imágenes</p>
-                        <h3 class="stat-value" id="totalImages">0</h3>
-                    </div>
+            <!-- Stats globales -->
+            <div class="mini-stats">
+                <div class="mini-stat">
+                    <strong id="airbnb-count">0</strong> Airbnb
                 </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Última Actualización</p>
-                        <h3 class="stat-value" id="lastUpdate">Nunca</h3>
-                    </div>
+                <div class="mini-stat">
+                    <strong id="arriendo-count">0</strong> Arriendos
+                </div>
+                <div class="mini-stat">
+                    <strong id="venta-count">0</strong> Ventas
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="action-buttons">
-                <button class="btn-primary" onclick="showAddForm()">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/>
-                    </svg>
-                    Agregar Nuevo Departamento
-                </button>
-                <button class="btn-secondary" onclick="viewWebsite()">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                    </svg>
-                    Ver Sitio Web
-                </button>
+            <!-- Tabs -->
+            <div class="section-tabs">
+                <button class="tab-btn tab-airbnb active-tab" onclick="switchTab('airbnb')">✈️ Airbnb</button>
+                <button class="tab-btn tab-arriendo" onclick="switchTab('arriendo')">🏠 Arriendo</button>
+                <button class="tab-btn tab-venta" onclick="switchTab('venta')">🏷️ Venta</button>
             </div>
 
-            <!-- Apartments List -->
-            <div class="apartments-section">
-                <h2 class="section-title">Tus Departamentos</h2>
-                <div id="apartmentsList" class="apartments-list">
-                    <!-- Los departamentos se cargarán aquí dinámicamente -->
+            <!-- ══ SECCIÓN AIRBNB ══ -->
+            <div class="tab-section active" id="tab-airbnb">
+                <div class="section-header-row">
+                    <h2 class="section-title">Propiedades Airbnb</h2>
+                    <button class="btn-primary" onclick="Airbnb.showForm()">+ Agregar Airbnb</button>
                 </div>
+                <div id="airbnb-list" class="apartments-list"></div>
+            </div>
+
+            <!-- ══ SECCIÓN ARRIENDO ══ -->
+            <div class="tab-section" id="tab-arriendo">
+                <div class="section-header-row">
+                    <h2 class="section-title">Propiedades en Arriendo</h2>
+                    <button class="btn-primary" onclick="Arriendo.showForm()">+ Agregar Arriendo</button>
+                </div>
+                <div id="arriendo-list" class="apartments-list"></div>
+            </div>
+
+            <!-- ══ SECCIÓN VENTA ══ -->
+            <div class="tab-section" id="tab-venta">
+                <div class="section-header-row">
+                    <h2 class="section-title">Propiedades en Venta</h2>
+                    <button class="btn-primary" onclick="Venta.showForm()">+ Agregar Venta</button>
+                </div>
+                <div id="venta-list" class="apartments-list"></div>
             </div>
 
         </div>
     </main>
 
-    <!-- Modal para agregar/editar departamento -->
-    <div id="apartmentModal" class="modal">
+    <!-- ══════════════════════════════════════
+         MODAL AIRBNB
+    ══════════════════════════════════════ -->
+    <div id="airbnb-modal" class="modal">
         <div class="modal-content modal-large">
-            <div class="modal-header">
-                <h2 id="modalTitle">Agregar Nuevo Departamento</h2>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header" style="border-top: 4px solid #d4af37;">
+                <h2>Propiedad Airbnb</h2>
+                <button class="modal-close" onclick="Airbnb.closeModal()">&times;</button>
             </div>
-
-            <!-- Progress Bar -->
             <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <p class="progress-text">Paso <span id="currentStep">1</span> de <span id="totalSteps">8</span></p>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+                <p class="progress-text">Paso <span class="step-current">1</span> de <span class="step-total">8</span></p>
             </div>
+            <form id="airbnb-form" onsubmit="Airbnb.submit(event)" class="wizard-form">
 
-            <form id="apartmentForm" class="wizard-form">
-                <!-- Step 1: Nombre -->
                 <div class="form-step active" data-step="1">
                     <div class="step-content">
                         <div class="step-icon">🏠</div>
-                        <h3 class="step-question">¿Cómo se llama tu departamento?</h3>
-                        <p class="step-hint">Dale un nombre atractivo y descriptivo</p>
-                        <input type="text" id="apartmentName" class="input-large" placeholder="Ej: Penthouse Panorámico" required>
+                        <h3 class="step-question">¿Cómo se llama tu propiedad?</h3>
+                        <p class="step-hint">Dale un nombre atractivo</p>
+                        <input type="text" id="ab-name" class="input-large" placeholder="Ej: Penthouse Panorámico">
                     </div>
                 </div>
 
-                <!-- Step 2: Ubicación -->
                 <div class="form-step" data-step="2">
                     <div class="step-content">
                         <div class="step-icon">📍</div>
-                        <h3 class="step-question">¿Dónde está ubicado?</h3>
-                        <p class="step-hint">Indica el barrio o zona</p>
-                        <input type="text" id="apartmentLocation" class="input-large" placeholder="Ej: Centro Histórico" required>
+                        <h3 class="step-question">¿Dónde está ubicada?</h3>
+                        <p class="step-hint">Barrio o zona de Concepción</p>
+                        <input type="text" id="ab-location" class="input-large" placeholder="Ej: Centro Histórico">
                     </div>
                 </div>
 
-                <!-- Step 3: Precio -->
                 <div class="form-step" data-step="3">
                     <div class="step-content">
                         <div class="step-icon">💰</div>
-                        <h3 class="step-question">¿Cuál es el precio por noche?</h3>
-                        <p class="step-hint">En dólares USD</p>
-                        <input type="number" id="apartmentPrice" class="input-large" placeholder="150" min="1" required>
+                        <h3 class="step-question">¿Precio por noche? (CLP)</h3>
+                        <p class="step-hint">Precio en pesos chilenos</p>
+                        <input type="number" id="ab-price" class="input-large" placeholder="Ej: 80000" min="1">
                     </div>
                 </div>
 
-                <!-- Step 4: Capacidad -->
                 <div class="form-step" data-step="4">
                     <div class="step-content">
                         <div class="step-icon">👥</div>
                         <h3 class="step-question">¿Cuántos huéspedes acepta?</h3>
-                        <p class="step-hint">Número máximo de personas</p>
-                        <input type="number" id="apartmentGuests" class="input-large" placeholder="4" min="1" max="20" required>
+                        <p class="step-hint">Máximo de personas</p>
+                        <input type="number" id="ab-guests" class="input-large" placeholder="4" min="1" max="20">
                     </div>
                 </div>
 
-                <!-- Step 5: Habitaciones y Baños -->
                 <div class="form-step" data-step="5">
                     <div class="step-content">
                         <div class="step-icon">🛏️</div>
-                        <h3 class="step-question">¿Cuántas habitaciones y baños tiene?</h3>
-                        <p class="step-hint">Especifica la cantidad de cada uno</p>
+                        <h3 class="step-question">Habitaciones y baños</h3>
+                        <p class="step-hint">Cantidad de cada uno</p>
                         <div class="input-row">
                             <div class="input-col">
                                 <label>Habitaciones</label>
-                                <input type="number" id="apartmentBedrooms" class="input-large" placeholder="2" min="0" max="10" required>
+                                <input type="number" id="ab-bedrooms" class="input-large" placeholder="2" min="0" max="10">
                             </div>
                             <div class="input-col">
                                 <label>Baños</label>
-                                <input type="number" id="apartmentBathrooms" class="input-large" placeholder="2" min="1" max="10" required>
+                                <input type="number" id="ab-bathrooms" class="input-large" placeholder="1" min="1" max="10">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 6: Descripción -->
                 <div class="form-step" data-step="6">
                     <div class="step-content">
                         <div class="step-icon">📝</div>
-                        <h3 class="step-question">Describe tu departamento</h3>
-                        <p class="step-hint">Cuéntales a tus huéspedes lo especial de tu espacio</p>
-                        <textarea id="apartmentDescription" class="textarea-large" rows="5" placeholder="Ej: Hermoso departamento con vista al mar, completamente amoblado y decorado con estilo moderno..." required></textarea>
+                        <h3 class="step-question">Describe la propiedad</h3>
+                        <p class="step-hint">Mínimo 20 caracteres</p>
+                        <textarea id="ab-description" class="textarea-large" rows="5" placeholder="Hermoso departamento con vista al mar..."></textarea>
                     </div>
                 </div>
 
-                <!-- Step 7: Amenidades -->
                 <div class="form-step" data-step="7">
                     <div class="step-content">
                         <div class="step-icon">✨</div>
                         <h3 class="step-question">¿Qué comodidades ofreces?</h3>
                         <p class="step-hint">Selecciona todas las que apliquen</p>
                         <div class="amenities-grid">
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="WiFi de alta velocidad">
-                                <span>📶 WiFi de alta velocidad</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Aire acondicionado">
-                                <span>❄️ Aire acondicionado</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Cocina equipada">
-                                <span>🍳 Cocina equipada</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Smart TV">
-                                <span>📺 Smart TV</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Lavadora">
-                                <span>🧺 Lavadora</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Estacionamiento">
-                                <span>🚗 Estacionamiento</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Terraza/Balcón">
-                                <span>🌿 Terraza/Balcón</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Vista panorámica">
-                                <span>🌆 Vista panorámica</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Gimnasio">
-                                <span>💪 Gimnasio</span>
-                            </label>
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" value="Piscina">
-                                <span>🏊 Piscina</span>
-                            </label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="WiFi de alta velocidad"><span>📶 WiFi</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Aire acondicionado"><span>❄️ Aire acond.</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Cocina equipada"><span>🍳 Cocina</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Smart TV"><span>📺 Smart TV</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Lavadora"><span>🧺 Lavadora</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Estacionamiento"><span>🚗 Estacionamiento</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Terraza/Balcón"><span>🌿 Terraza</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Vista panorámica"><span>🌆 Vista</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Piscina"><span>🏊 Piscina</span></label>
+                            <label class="amenity-checkbox"><input type="checkbox" value="Gimnasio"><span>💪 Gimnasio</span></label>
                         </div>
                         <div class="custom-amenity">
-                            <input type="text" id="customAmenity" class="input-large" placeholder="Agregar otra comodidad...">
-                            <button type="button" class="btn-add-amenity" onclick="addCustomAmenity()">+</button>
+                            <input type="text" id="ab-custom-amenity" class="input-large" placeholder="Otra comodidad...">
+                            <button type="button" class="btn-add-amenity" onclick="Airbnb.addCustomAmenity()">+</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 8: Imágenes -->
                 <div class="form-step" data-step="8">
                     <div class="step-content">
                         <div class="step-icon">📸</div>
-                        <h3 class="step-question">Sube las imágenes de tu departamento</h3>
-                        <p class="step-hint">Máximo 10 imágenes en formato JPG o PNG de alta calidad</p>
-                        
-                        <div class="upload-area" id="uploadArea">
-                            <input type="file" id="imageInput" accept="image/jpeg,image/jpg,image/png" multiple style="display: none;">
+                        <h3 class="step-question">Imágenes de la propiedad</h3>
+                        <p class="step-hint">Máximo 10 imágenes JPG/PNG</p>
+                        <div class="upload-area" id="ab-upload-area">
+                            <input type="file" id="ab-image-input" accept="image/jpeg,image/jpg,image/png" multiple style="display:none">
                             <div class="upload-prompt">
-                                <svg width="64" height="64" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
-                                </svg>
-                                <p>Arrastra las imágenes aquí o haz clic para seleccionar</p>
-                                <span>JPG, PNG - Máximo 10 imágenes</span>
+                                <svg width="48" height="48" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
+                                <p>Arrastra o haz clic para seleccionar</p>
                             </div>
                         </div>
-
-                        <div id="imagePreview" class="image-preview-grid"></div>
+                        <div id="ab-image-preview" class="image-preview-grid"></div>
                     </div>
                 </div>
 
-                <!-- Navigation Buttons -->
                 <div class="form-navigation">
-                    <button type="button" class="btn-nav btn-prev" onclick="previousStep()" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Anterior
-                    </button>
-                    <button type="button" class="btn-nav btn-next" onclick="nextStep()">
-                        Siguiente
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                    <button type="submit" class="btn-nav btn-submit" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        Guardar Departamento
-                    </button>
+                    <button type="button" class="btn-nav btn-prev" onclick="Airbnb.prevStep()" style="display:none">← Anterior</button>
+                    <button type="button" class="btn-nav btn-next" onclick="Airbnb.nextStep()">Siguiente →</button>
+                    <button type="submit" class="btn-nav btn-submit" style="display:none">✓ Guardar Airbnb</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="admin-script.js"></script>
+    <!-- ══════════════════════════════════════
+         MODAL ARRIENDO
+    ══════════════════════════════════════ -->
+    <div id="arriendo-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header" style="border-top: 4px solid #6b8f71;">
+                <h2>Propiedad en Arriendo</h2>
+                <button class="modal-close" onclick="Arriendo.closeModal()">&times;</button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"><div class="progress-fill" style="background: #6b8f71;"></div></div>
+                <p class="progress-text">Paso <span class="step-current">1</span> de <span class="step-total">8</span></p>
+            </div>
+            <form id="arriendo-form" onsubmit="Arriendo.submit(event)" class="wizard-form">
+
+                <div class="form-step active" data-step="1">
+                    <div class="step-content">
+                        <div class="step-icon">🏠</div>
+                        <h3 class="step-question">¿Cómo se llama la propiedad?</h3>
+                        <input type="text" id="ar-name" class="input-large" placeholder="Ej: Depto 2D Pedro de Valdivia">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <div class="step-content">
+                        <div class="step-icon">📍</div>
+                        <h3 class="step-question">¿Dónde está ubicada?</h3>
+                        <input type="text" id="ar-location" class="input-large" placeholder="Ej: Barrio Universitario">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <div class="step-content">
+                        <div class="step-icon">💵</div>
+                        <h3 class="step-question">¿Precio mensual? (CLP)</h3>
+                        <p class="step-hint">Arriendo mensual en pesos</p>
+                        <input type="number" id="ar-price" class="input-large" placeholder="Ej: 450000" min="1">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="4">
+                    <div class="step-content">
+                        <div class="step-icon">📐</div>
+                        <h3 class="step-question">Superficie y piso</h3>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Metros cuadrados (m²)</label>
+                                <input type="number" id="ar-sqm" class="input-large" placeholder="65" min="1">
+                            </div>
+                            <div class="input-col">
+                                <label>Piso</label>
+                                <input type="text" id="ar-floor" class="input-large" placeholder="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="5">
+                    <div class="step-content">
+                        <div class="step-icon">🛏️</div>
+                        <h3 class="step-question">Habitaciones y baños</h3>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Habitaciones</label>
+                                <input type="number" id="ar-bedrooms" class="input-large" placeholder="2" min="0">
+                            </div>
+                            <div class="input-col">
+                                <label>Baños</label>
+                                <input type="number" id="ar-bathrooms" class="input-large" placeholder="1" min="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="6">
+                    <div class="step-content">
+                        <div class="step-icon">🛋️</div>
+                        <h3 class="step-question">Estado del amoblado</h3>
+                        <select id="ar-furnished" class="input-large">
+                            <option value="">Selecciona...</option>
+                            <option value="Amoblado">Amoblado</option>
+                            <option value="Semi amoblado">Semi amoblado</option>
+                            <option value="Sin amoblar">Sin amoblar</option>
+                        </select>
+                        <p class="step-hint" style="margin-top:1rem;">Extras (opcional, separados por coma)</p>
+                        <input type="text" id="ar-extras" class="input-large" placeholder="Ej: Piscina, Gimnasio, Bodega">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="7">
+                    <div class="step-content">
+                        <div class="step-icon">📝</div>
+                        <h3 class="step-question">Descripción</h3>
+                        <textarea id="ar-description" class="textarea-large" rows="5" placeholder="Departamento luminoso en excelente ubicación..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="8">
+                    <div class="step-content">
+                        <div class="step-icon">📸</div>
+                        <h3 class="step-question">Imágenes</h3>
+                        <p class="step-hint">Máximo 10 imágenes JPG/PNG</p>
+                        <div class="upload-area" id="ar-upload-area">
+                            <input type="file" id="ar-image-input" accept="image/jpeg,image/jpg,image/png" multiple style="display:none">
+                            <div class="upload-prompt">
+                                <svg width="48" height="48" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
+                                <p>Arrastra o haz clic para seleccionar</p>
+                            </div>
+                        </div>
+                        <div id="ar-image-preview" class="image-preview-grid"></div>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn-nav btn-prev" onclick="Arriendo.prevStep()" style="display:none">← Anterior</button>
+                    <button type="button" class="btn-nav btn-next" onclick="Arriendo.nextStep()">Siguiente →</button>
+                    <button type="submit" class="btn-nav btn-submit" style="display:none">✓ Guardar Arriendo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MODAL VENTA
+    ══════════════════════════════════════ -->
+    <div id="venta-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header" style="border-top: 4px solid #2c3e6b;">
+                <h2>Propiedad en Venta</h2>
+                <button class="modal-close" onclick="Venta.closeModal()">&times;</button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"><div class="progress-fill" style="background: #2c3e6b;"></div></div>
+                <p class="progress-text">Paso <span class="step-current">1</span> de <span class="step-total">8</span></p>
+            </div>
+            <form id="venta-form" onsubmit="Venta.submit(event)" class="wizard-form">
+
+                <div class="form-step active" data-step="1">
+                    <div class="step-content">
+                        <div class="step-icon">🏢</div>
+                        <h3 class="step-question">¿Cómo se llama la propiedad?</h3>
+                        <input type="text" id="vt-name" class="input-large" placeholder="Ej: Penthouse Barrio Italia">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <div class="step-content">
+                        <div class="step-icon">📍</div>
+                        <h3 class="step-question">¿Dónde está ubicada?</h3>
+                        <input type="text" id="vt-location" class="input-large" placeholder="Ej: Sector Costanera">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <div class="step-content">
+                        <div class="step-icon">💎</div>
+                        <h3 class="step-question">Precio de venta</h3>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Precio en UF</label>
+                                <input type="number" id="vt-price-uf" class="input-large" placeholder="Ej: 4500" min="1" step="0.01">
+                            </div>
+                            <div class="input-col">
+                                <label>Equivalente CLP (opcional)</label>
+                                <input type="number" id="vt-price-clp" class="input-large" placeholder="Ej: 150000000" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="4">
+                    <div class="step-content">
+                        <div class="step-icon">📐</div>
+                        <h3 class="step-question">Superficie y año</h3>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Metros cuadrados (m²)</label>
+                                <input type="number" id="vt-sqm" class="input-large" placeholder="120" min="1">
+                            </div>
+                            <div class="input-col">
+                                <label>Año de construcción</label>
+                                <input type="number" id="vt-year" class="input-large" placeholder="2018" min="1900" max="2025">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="5">
+                    <div class="step-content">
+                        <div class="step-icon">🛏️</div>
+                        <h3 class="step-question">Habitaciones y baños</h3>
+                        <div class="input-row">
+                            <div class="input-col">
+                                <label>Habitaciones</label>
+                                <input type="number" id="vt-bedrooms" class="input-large" placeholder="3" min="0">
+                            </div>
+                            <div class="input-col">
+                                <label>Baños</label>
+                                <input type="number" id="vt-bathrooms" class="input-large" placeholder="2" min="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="6">
+                    <div class="step-content">
+                        <div class="step-icon">🏦</div>
+                        <h3 class="step-question">¿Acepta hipoteca?</h3>
+                        <select id="vt-mortgage" class="input-large">
+                            <option value="">Selecciona...</option>
+                            <option value="si">Sí, acepta crédito hipotecario</option>
+                            <option value="no">No, solo contado</option>
+                        </select>
+                        <p class="step-hint" style="margin-top:1rem;">Características destacadas (separadas por coma)</p>
+                        <input type="text" id="vt-features" class="input-large" placeholder="Ej: Piscina, Estacionamiento, Bodega">
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="7">
+                    <div class="step-content">
+                        <div class="step-icon">📝</div>
+                        <h3 class="step-question">Descripción</h3>
+                        <textarea id="vt-description" class="textarea-large" rows="5" placeholder="Exclusiva propiedad con terminaciones de primera línea..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="8">
+                    <div class="step-content">
+                        <div class="step-icon">📸</div>
+                        <h3 class="step-question">Imágenes</h3>
+                        <p class="step-hint">Máximo 10 imágenes JPG/PNG</p>
+                        <div class="upload-area" id="vt-upload-area">
+                            <input type="file" id="vt-image-input" accept="image/jpeg,image/jpg,image/png" multiple style="display:none">
+                            <div class="upload-prompt">
+                                <svg width="48" height="48" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
+                                <p>Arrastra o haz clic para seleccionar</p>
+                            </div>
+                        </div>
+                        <div id="vt-image-preview" class="image-preview-grid"></div>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn-nav btn-prev" onclick="Venta.prevStep()" style="display:none">← Anterior</button>
+                    <button type="button" class="btn-nav btn-next" onclick="Venta.nextStep()">Siguiente →</button>
+                    <button type="submit" class="btn-nav btn-submit" style="display:none">✓ Guardar Venta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="admin-airbnb.js"></script>
+    <script src="admin-arriendo.js"></script>
+    <script src="admin-venta.js"></script>
+    <script>
+        // ── Sesión ────────────────────────────────────────
+        function getSession() {
+            const s = localStorage.getItem('adminSession') || sessionStorage.getItem('adminSession');
+            return s ? JSON.parse(s) : null;
+        }
+
+        function logout() {
+            localStorage.removeItem('adminSession');
+            sessionStorage.removeItem('adminSession');
+            window.location.href = 'admin-login.html';
+        }
+
+        function checkSession() {
+            const session = getSession();
+            if (!session) { window.location.href = 'admin-login.html'; return; }
+            const hours = (new Date() - new Date(session.loginTime)) / 3600000;
+            if (hours > 24) logout();
+            const el = document.getElementById('adminUsername');
+            if (el) el.textContent = session.username;
+        }
+
+        // ── Tabs ──────────────────────────────────────────
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.querySelector('.tab-' + tab).classList.add('active-tab');
+        }
+
+        // ── Notificaciones globales ───────────────────────
+        function showNotification(message, type = 'info') {
+            const n = document.createElement('div');
+            n.style.cssText = `
+                position:fixed;top:2rem;right:2rem;padding:1rem 1.5rem;
+                background:${type==='success'?'#10b981':type==='error'?'#ef4444':'#3b82f6'};
+                color:white;border-radius:8px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1);
+                z-index:10000;font-weight:500;max-width:380px;
+                animation:slideIn .3s ease;`;
+            n.textContent = message;
+            document.body.appendChild(n);
+            setTimeout(() => { n.style.opacity='0'; n.style.transition='opacity .3s'; setTimeout(()=>n.remove(),300); }, 3000);
+        }
+
+        const notifStyle = document.createElement('style');
+        notifStyle.textContent = `@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}`;
+        document.head.appendChild(notifStyle);
+
+        document.addEventListener('DOMContentLoaded', checkSession);
+    </script>
 </body>
 </html>

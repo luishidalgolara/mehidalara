@@ -104,6 +104,38 @@
         </span>
     </a>
 
+    <!-- Acceso Admin — discreto, esquina inferior izquierda -->
+    <a href="admin-login.html" class="admin-access" aria-label="Administrador">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+        </svg>
+    </a>
+    <style>
+        .admin-access {
+            position: fixed;
+            bottom: 1.8rem;
+            left: 1.8rem;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: rgba(255,255,255,0.2);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            z-index: 999;
+            backdrop-filter: blur(4px);
+        }
+        .admin-access:hover {
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.7);
+            border-color: rgba(255,255,255,0.3);
+        }
+    </style>
+
     <script src="script.js"></script>
 </body>
 </html>
